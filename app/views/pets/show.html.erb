@@ -1,0 +1,12 @@
+<div class="container">
+  <h1><%= @pet.name %></h1>
+  <p><%= @pet.species %></p>
+  <p><%= @pet.address %></p>
+  <p><%= @pet.found_on.strftime('%A, %b %d') %></p>
+  <%= link_to 'All pets', pets_path, class: 'btn btn-light'  %>
+  <p>
+    <%= link_to pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Remove #{@pet.name}?" } do %>
+      <i class="fa-regular fa-circle-xmark"></i>
+    <% end %>
+  </p>
+</div>
